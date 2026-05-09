@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette Lab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="app-container">
+        <!-- Top Navigation / Header -->
+        <header class="app-header">
+            <div class="header-actions-left">
+                <button class="icon-button" aria-label="Menu" id="menu-btn">
+                    <!-- Placeholder for palette icon -->
+                    <span class="icon-placeholder">🎨</span>
+                </button>
+            </div>
+
+            <div class="header-title-wrapper">
+                <h1 class="app-title">Palette <span class="highlight">Lab</span></h1>
+                <p class="app-subtitle">Generate beautiful, accessible color palettes using <span
+                        class="highlight-harmony">harmony</span> principles.</p>
+            </div>
+
+            <div class="header-actions-right">
+                <button class="icon-button" aria-label="Toggle Theme" id="theme-toggle-btn">
+                    <!-- Placeholder for theme toggle icon -->
+                    <span class="icon-placeholder">☀️</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Control Bar -->
+        <section class="controls-section">
+            <div class="control-group">
+                <label for="harmony-select" class="control-label">Harmony</label>
+                <div class="select-wrapper">
+                    <select id="harmony-select" class="harmony-select">
+                        <option value="analogous">Analogous</option>
+                        <option value="monochromatic">Monochromatic</option>
+                        <option value="triadic">Triadic</option>
+                        <option value="complementary">Complementary</option>
+                        <option value="split-complementary">Split Complementary</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="base-color-text" class="control-label">Base Color</label>
+                <div class="input-wrapper">
+                    <input type="color" id="base-color-picker" class="color-picker" value="#7B2CBF"
+                        aria-label="Pick Base Color">
+                    <input type="text" id="base-color-text" class="text-input" value="#7B2CBF">
+                </div>
+            </div>
+
+            <button id="generate-btn" class="generate-button">
+                <span class="icon-placeholder">🔄</span> Generate Palette
+            </button>
+        </section>
+
+        <!-- Palette Cards Container -->
+        <section class="palette-container" id="palette-container" aria-live="polite">
+            <!-- Card 1 -->
+            <article class="color-card">
+                <div class="color-display" style="background-color: #2D1B69;"></div>
+                <div class="color-info">
+                    <h2 class="color-hex">#2D1B69</h2>
+                    <div class="accessibility-badge pass">
+                        <span class="icon-placeholder">✔️</span> AA Pass
+                    </div>
+                </div>
+                <div class="color-actions">
+                    <button class="copy-button" data-color="#2D1B69">
+                        <span class="icon-placeholder">📋</span> Copy
+                    </button>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="color-card">
+                <div class="color-display" style="background-color: #5B2A86;"></div>
+                <div class="color-info">
+                    <h2 class="color-hex">#5B2A86</h2>
+                    <div class="accessibility-badge pass">
+                        <span class="icon-placeholder">✔️</span> AA Pass
+                    </div>
+                </div>
+                <div class="color-actions">
+                    <button class="copy-button" data-color="#5B2A86">
+                        <span class="icon-placeholder">📋</span> Copy
+                    </button>
+                </div>
+            </article>
+
+            <!-- Card 3 (Base Color) -->
+            <article class="color-card base-color">
+                <div class="color-display" style="background-color: #A23E75;"></div>
+                <div class="color-info">
+                    <h2 class="color-hex">#A23E75</h2>
+                    <div class="accessibility-badge pass">
+                        <span class="icon-placeholder">✔️</span> AA Pass
+                    </div>
+                </div>
+                <div class="color-actions">
+                    <button class="copy-button" data-color="#A23E75">
+                        <span class="icon-placeholder">📋</span> Copy
+                    </button>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="color-card">
+                <div class="color-display" style="background-color: #F18F01;"></div>
+                <div class="color-info">
+                    <h2 class="color-hex">#F18F01</h2>
+                    <div class="accessibility-badge pass">
+                        <span class="icon-placeholder">✔️</span> AA Pass
+                    </div>
+                </div>
+                <div class="color-actions">
+                    <button class="copy-button" data-color="#F18F01">
+                        <span class="icon-placeholder">📋</span> Copy
+                    </button>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="color-card">
+                <div class="color-display" style="background-color: #C73E1D;"></div>
+                <div class="color-info">
+                    <h2 class="color-hex">#C73E1D</h2>
+                    <div class="accessibility-badge pass">
+                        <span class="icon-placeholder">✔️</span> AA Pass
+                    </div>
+                </div>
+                <div class="color-actions">
+                    <button class="copy-button" data-color="#C73E1D">
+                        <span class="icon-placeholder">📋</span> Copy
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <!-- Accessibility Status Footer -->
+        <footer class="app-footer">
+            <div class="footer-status">
+                <span class="icon-placeholder">🛡️</span>
+                <p>All colors meet <span class="highlight-wcag">WCAG 2.1 AA</span> standard</p>
+            </div>
+            <div class="footer-details">
+                <p>Harmony: <span class="highlight-harmony" id="current-harmony">Analogous</span></p>
+            </div>
+            <div class="footer-actions">
+                <button id="export-btn" class="export-button">
+                    <span class="icon-placeholder">📥</span> Export Palette
+                </button>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
